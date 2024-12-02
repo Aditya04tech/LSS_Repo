@@ -25,7 +25,7 @@ class authController {
             expiresIn: "10m",
           });
 
-          const link = `http://localhost:9000/api/auth/verify/${token}`;
+          const link = `http://3.108.252.99:3000/api/auth/verify/${token}`;
 
           sendEmailtoUser(link, email, name, password);
           ;
