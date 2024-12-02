@@ -24,7 +24,7 @@ const __dirname = path.dirname(__filename);
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "../build")));
+app.use(express.static(path.join(__dirname, "build")));
 
 // Serve static videos
 app.use('/videos', express.static(path.join(__dirname, 'videos')));
@@ -82,8 +82,8 @@ app.delete('/api/videos/:id', (req, res) => {
 // Get all videos
 app.get('/api/videos', (req, res) => res.status(200).json(videos));
 // Handle React routing
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../build", "index.html"));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 // Start the server
